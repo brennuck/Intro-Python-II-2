@@ -8,3 +8,9 @@ class Item:
 
     def __repr__(self):
         return f"Name: {self.name}, Description: {self.description}"
+
+    def on_take(self):
+        print(f"You picked up the {self.name.lower()}")
+
+    def on_drop(self):
+        print(f"You dropped the {self.name.lower()}")

@@ -41,11 +41,14 @@ class Player:
         if item in self.current_room.items: # If there is an item in the room
             self.current_room.items.remove(item) # Remove it from the room
             self.items.append(item) # Add to players items
+            item.on_take() # Prints you picked up the item
+
 
     def drop_item(self, item):
         if item in self.items: # If there is an item in players inventory
             self.items.remove(item) # Remove it
             self.current_room.items.append(item) # Add it to the room inventory
+            item.on_drop() # Prints you picked up the item
 
     def print_items(self):
         if len(self.items) > 0:

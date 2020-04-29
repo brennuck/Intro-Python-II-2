@@ -74,5 +74,14 @@ def move(player):
         move(player)
     elif direction_choice == "q":
         print("Bye Bye")
+    elif direction_choice == "i":
+        player.print_items()
+        move(player)
+    elif direction_choice == "p":
+        player.get_item(player.current_room.items)
+        move(player)
+    elif direction_choice == "z":
+        player.drop_item()
+        move(player)
 
 move(player1)

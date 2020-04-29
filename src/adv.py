@@ -52,3 +52,28 @@ player1 = Player("Brennon", room['outside'])
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+def move(player):
+    print(player.current_room)
+    direction_choice = input("\n Where would you like to go? n, e, s, w, or q to quit \n")
+
+    if direction_choice == "n":
+        print(player.current_room)
+        player.try_north()
+        move(player)
+    elif direction_choice == "e":
+        print(player.current_room)
+        player.try_east()
+        move(player)
+    elif direction_choice == "s":
+        print(player.current_room)
+        player.try_south()
+        move(player)
+    elif direction_choice == "w":
+        print(player.current_room)
+        player.try_west()
+        move(player)
+    elif direction_choice == "q":
+        print("Bye Bye")
+
+move(player1)

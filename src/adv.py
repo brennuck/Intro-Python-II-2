@@ -15,11 +15,11 @@ room = {
 sword = Item("Sword", "Dull but will do the trick")
 fork = Item("Fork", "You imagine all the food you could be eating")
 
-room['outside'].items = []
-room['foyer'].items = []
+room['outside'].items = None
+room['foyer'].items = None
 room['overlook'].items = [sword]
 room['narrow'].items = [fork]
-room['treasure'].items = []
+room['treasure'].items = None
 
 
 # Link rooms together

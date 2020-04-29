@@ -38,11 +38,20 @@ class Player:
             print("\n YOU CAN'T GO THAT WAY \n")
 
     def get_item(self, item):
-        if item in self.current_room.items:
-            self.current_room.items.remove(item)
-            self.items.append(item)
+        if item in self.current_room.items: # If there is an item in the room
+            self.current_room.items.remove(item) # Remove it from the room
+            self.items.append(item) # Add to players items
 
     def drop_item(self, item):
-        if item in self.items:
-            self.items.remove(item)
-            self.current_room.items.append(item)
+        if item in self.items: # If there is an item in players inventory
+            self.items.remove(item) # Remove it
+            self.current_room.items.append(item) # Add it to the room inventory
+
+    def print_items(self):
+        if len(self.items) > 0:
+            item_list = "You are holding the following items:"
+            for item in self.items:
+                item_list += f"\n {item}"
+        else:
+            item_list = "You are not holding anything"
+        print(item_list)
